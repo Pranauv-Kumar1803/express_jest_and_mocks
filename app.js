@@ -1,6 +1,6 @@
-import express from 'express'
+const express = require('express');
 
-export default function (database) {
+module.exports = function (database) {
   const app = express()
 
   app.use(express.json())

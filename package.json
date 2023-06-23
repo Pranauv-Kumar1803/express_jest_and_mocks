@@ -1,7 +1,8 @@
 {
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^3.4.0"
   },
   "scripts": {
     "start": "node server.js"

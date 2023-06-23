@@ -1,4 +1,4 @@
-import mysql from 'mysql2'
+const mysql = require('mysql2');
 
 const connection = mysql.createPool({
   host     : 'localhost',
@@ -6,7 +6,7 @@ const connection = mysql.createPool({
   database : 'some_database'
 })
 
-export async function getUser(username) {
+async function getUser(username) {
   const [rows] = await connection.promise().query(
     `SELECT * 
       FROM users 
@@ -17,7 +17,7 @@ export async function getUser(username) {
   return rows[0]
 }
 
-export async function createUser(username, password) {
+async function createUser(username, password) {
   const { insertId } = await connection.promise().query(
     `INSERT INTO users (username, password) 
       VALUES (?, ?)`,
@@ -26,3 +26,5 @@ export async function createUser(username, password) {
 
   return insertId
 }
+
+module.exports = {createUser, getUser};

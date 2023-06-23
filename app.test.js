@@ -1,6 +1,5 @@
-import request from 'supertest'
-import makeApp from './app.js'
-import { jest } from '@jest/globals'
+const request =  require('supertest')
+const makeApp = require('./app.js')
 
 const createUser = jest.fn()
 const getUser = jest.fn()

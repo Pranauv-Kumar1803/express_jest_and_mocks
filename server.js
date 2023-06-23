@@ -1,5 +1,5 @@
-import database from './database.js'
-import makeApp from './app.js'
+const database = require('./database.js');
+const makeApp = require('./app.js')
 
 const app = makeApp(database)
 
